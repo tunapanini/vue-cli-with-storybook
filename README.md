@@ -30,5 +30,12 @@ npm run test:e2e
 npm run lint
 ```
 
+### Storybook serve & build
+```
+npm run storybook:serve
+
+npm run storybook:build
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
