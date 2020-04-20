@@ -4,11 +4,22 @@ module.exports = {
     node: true
   },
   'extends': [
+    'airbnb-base',
     'plugin:vue/essential',
     '@vue/standard',
     '@vue/typescript'
   ],
   rules: {
+    semi: ['error', 'always'],
+    'comma-dangle': ['error', 'only-multiline'],
+    'import/extensions': [
+      'error',
+      'always',
+      {
+        js: 'never',
+        ts: 'never',
+      },
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
@@ -25,5 +36,15 @@ module.exports = {
         jest: true
       }
     }
-  ]
-}
+  ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src']
+        ],
+        extensions: ['.ts', '.js', '.vue']
+      }
+    }
+  }
+};
